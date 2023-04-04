@@ -6,7 +6,7 @@ In this demo, we use the existing public backend API called [Conference API](htt
 
 the request shows only sessions of a speaker with a unique id and this unique id comes from the JWT token claim as a part of its payload. Look at the below decoded token payload structure, there is a `speakerId` field also included:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/73c611f4-b189-41f4-a06f-a807a11ce1b9/Untitled.png)
+![Dynamic routing based on user credentials with API Gateway](https://static.apiseven.com/uploads/2023/04/04/qkPrEpe2_Dynamic%20routing%20based%20on%20user%20credentials%20with%20API%20Gateway.png)
 
 In this scenario, we send requests to the same [Route](https://apisix.apache.org/docs/apisix/terminology/route/) at API Gateway and it computes the dynamic URI  from the authorization header and forwards the request to the URI (See below diagram to understand the flow). To do so, we are going to implement a dynamic routing at the Apache APISIX API Gateway level based on the JWT token's claim through the use of the following plugins:
 
